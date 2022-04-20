@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "io.travis.strombringer"
+        applicationId "io.travis.stormbringer"
         minSdk 22
         targetSdk 31
         versionCode 1

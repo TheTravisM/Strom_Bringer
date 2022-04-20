@@ -1,4 +1,4 @@
-package io.travis.strombringer
+package io.travis.stormbringer
 
 import android.app.AlertDialog
 import android.app.Dialog

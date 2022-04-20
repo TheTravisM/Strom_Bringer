@@ -1,8 +1,10 @@
-package io.travis.strombringer
+package io.travis.stormbringer
 
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +25,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val odenForce = findViewById<TextView>(R.id.textView_PoweredBy)
+        odenForce.movementMethod = LinkMovementMethod.getInstance()
 
         val apiKey: String = "dc0e0b64666b1ca150b5269a0b7c4ed3"
 

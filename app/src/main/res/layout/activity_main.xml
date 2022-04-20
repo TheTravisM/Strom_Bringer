@@ -4,15 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/appBackground"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView_LocationValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_TimeValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Alcatraz Island, CA" />
+
+    <TextView
+        android:id="@+id/textView_TimeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="at 5:00pm it will be"
+        android:textColor="@color/white_50_trans"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_TemperatureValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_TemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="100"
+        android:textColor="@android:color/white"
+        android:textSize="169sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_Degree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toEndOf="@+id/textView_TemperatureValue"
+        app:layout_constraintTop_toTopOf="@+id/textView_TemperatureValue"
+        app:srcCompat="@drawable/degree"
+        android:contentDescription="@string/degree_symbol" />
+
+    <ImageView
+        android:id="@+id/imageView_Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_LocationValue"
+        app:layout_constraintEnd_toStartOf="@+id/textView_LocationValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/cloudy_night"
+        android:contentDescription="@string/weather_icon" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".66" />
+
+    <TextView
+        android:id="@+id/textView_HumidityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity"
+        android:textColor="@color/white_50_trans"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_33"
+        app:layout_constraintStart_toStartOf="@+id/guideline_33"
+        app:layout_constraintTop_toBottomOf="@+id/textView_TemperatureValue" />
+
+    <TextView
+        android:id="@+id/textView_HumidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0_88"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/textView_HumidityLabel"
+        app:layout_constraintEnd_toEndOf="@+id/textView_HumidityLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_HumidityLabel" />
+
+    <TextView
+        android:id="@+id/textView_RainSnowLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity"
+        android:textColor="@color/white_50_trans"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_66"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_66"
+        app:layout_constraintTop_toBottomOf="@+id/textView_TemperatureValue" />
+
+    <TextView
+        android:id="@+id/textView_RainSnowValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0_88"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/textView_RainSnowLabel"
+        app:layout_constraintEnd_toEndOf="@+id/textView_RainSnowLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_RainSnowLabel" />
+
+    <TextView
+        android:id="@+id/textView_DescriptionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/stormy_night_skies"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_RainSnowValue" />
+
+    <TextView
+        android:id="@+id/textView_PoweredBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/powered_by_the_oden_force"
+        android:textColor="@color/white_50_trans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

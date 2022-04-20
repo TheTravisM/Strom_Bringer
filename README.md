@@ -1,4 +1,4 @@
-# Strom_Bringer
+# storm_Bringer
 Weather App OpenWeather API
 
 [okHttp](https://square.github.io/okhttp/)

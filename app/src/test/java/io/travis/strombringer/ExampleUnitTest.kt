@@ -1,4 +1,4 @@
-package io.travis.strombringer
+package io.travis.stormbringer
 
 import org.junit.Test
 
