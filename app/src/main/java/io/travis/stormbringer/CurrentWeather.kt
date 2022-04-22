@@ -3,21 +3,42 @@ package io.travis.stormbringer
 import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.roundToInt
 
-class CurrentWeather {
-    private lateinit var name: String // Name = city name
-    private lateinit var icon: String // weather/icon
-    private var dt: Long = 0 // dt
+class CurrentWeather{
+    private var name: String = "" // Name = city name
+    private var icon: String = ""// weather/icon
     private var time: Long = 0 // dt
     private var temp: Double = 0.0 // main/temp
     private var humidity: Int = 0
-    private lateinit var description: String //weather/description
-    private lateinit var timezone: String
+    private var description: String = "" //weather/description
+    private var timezone: String = ""
 
 
     // private lateinit var humidity: Int // main/humidity
     // private lateinit var temperature: Int // main/temp
     //private lateinit var precip: String
+
+    constructor() { }
+
+    constructor(
+        name: String,
+        icon: String,
+        time: Long,
+        temp: Double,
+        humidity: Int,
+        description: String,
+        timezone: String
+    ) {
+        this.name = name
+        this.icon = icon
+        this.time = time
+        this.temp = temp
+        this.humidity = humidity
+        this.description = description
+        this.timezone = timezone
+    }
+
 
     fun getName(): String    { return name }
     fun setName(name:String) { this.name = name }
@@ -44,10 +65,6 @@ class CurrentWeather {
         return iconId
     }
 
-
-    fun getDt(): Long { return dt }
-    fun setDt(dt: Long) { this.dt = dt }
-
     fun getTime(): Long { return time }
     fun setTime(time: Long) { this.time = time }
 
@@ -60,23 +77,26 @@ class CurrentWeather {
         return formatter.format(dateTime)
     }
 
-    fun getTimeZone():String{ return timezone }
-    fun setTimezone(timezone:String){ this.timezone = timezone }
-
     fun getTemp(): Double { return temp }
-    fun setTemp(temp:Double) { this.temp = temp }
+    fun setTemp(temp: Double) { this.temp = temp }
+
+    fun getTempString(): String {
+        return temp.roundToInt().toString()
+    }
+    //fun setTempString(temp: String) { this.tempString = tempString }
 
     fun getHumidity(): Int { return humidity }
     fun setHumidity(humidity: Int) { this.humidity = humidity }
+    fun getHumidityString(): String {
+        return "$humidity %"
+    }
+
 
     fun getDescription(): String { return description }
-    fun setDescription(description: String) { this.description = description }
+    fun setDescription(description: String) { this.description = description.capitalize()
+    }
 
-
-
-
-
-
-
+    fun getTimezone():String{ return timezone }
+    fun setTimezone(timezone:String){ this.timezone = timezone }
 
 }
